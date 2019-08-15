@@ -1,13 +1,13 @@
 module.exports = {
   pathPrefix: "/bawei",
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Ba Wei, PhD`,
+    author: `Ba Wei`,
+    description: `Neuroscientist in sleep and anaesthesia`,
+    siteUrl: `https://vincentnavetat.github.io/bawei`,
     social: {
-      twitter: `kylemathews`,
-    },
+      twitter: `vivien_ba`,
+    }
   },
   plugins: [
     {
@@ -58,8 +58,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Ba Wei, PhD`,
+        short_name: `Ba Wei`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
