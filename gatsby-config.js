@@ -7,7 +7,17 @@ module.exports = {
     siteUrl: `https://vincentnavetat.github.io/bawei`,
     social: {
       twitter: `vivien_ba`,
-    }
+    },
+    menuLinks: [
+      {
+        name: 'home',
+        link: '/',
+      },
+      {
+        name: 'about',
+        link: '/about',
+      },
+    ],
   },
   plugins: [
     {
