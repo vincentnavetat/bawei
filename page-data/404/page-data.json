@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-404-js","path":"/404/","webpackCompilationHash":"1a3201c924e8a26eb448","result":{"data":{"site":{"siteMetadata":{"title":"Ba Wei, PhD"}}},"pageContext":{"isCreatedByStatefulCreatePages":true}}}
+{"componentChunkName":"component---src-pages-404-js","path":"/404/","webpackCompilationHash":"72f0e0c7b814285a10c3","result":{"data":{"site":{"siteMetadata":{"title":"Ba Wei, PhD","menuLinks":[{"name":"home","link":"/"},{"name":"about","link":"/about"}]}}},"pageContext":{"isCreatedByStatefulCreatePages":true}}}
