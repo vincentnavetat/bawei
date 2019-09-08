@@ -14,8 +14,20 @@ module.exports = {
         link: '/',
       },
       {
-        name: 'about',
-        link: '/about',
+        name: 'research',
+        link: '/research',
+      },
+      {
+        name: 'cv',
+        link: '/cv',
+      },
+      {
+        name: 'publications',
+        link: '/publications',
+      },
+      {
+        name: 'gallery',
+        link: '/gallery',
       },
     ],
   },

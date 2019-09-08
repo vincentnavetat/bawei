@@ -12,9 +12,12 @@ class BlogIndex extends React.Component {
     const headerLinks = data.site.siteMetadata.menuLinks
 
     return (
-      <Layout title={siteTitle} headerLinks={headerLinks}>
-        <SEO title="Wei Ba" />
+      <Layout location={this.props.location} title={siteTitle} headerLinks={headerLinks}>
+        <SEO title="Research" />
         <Bio />
+        <article>
+          This is the research page
+        </article>
       </Layout>
     )
   }
