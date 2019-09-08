@@ -7,23 +7,6 @@ import { rhythm } from "../utils/typography"
 class Layout extends React.Component {
   render() {
     const { title, headerLinks, children } = this.props
-    const header = <h3
-      style={{
-        fontFamily: `Montserrat, sans-serif`,
-        marginTop: 0,
-      }}
-    >
-      <Link
-        style={{
-          boxShadow: `none`,
-          textDecoration: `none`,
-          color: `inherit`,
-        }}
-        to={`/`}
-      >
-        {title}
-      </Link>
-    </h3>
 
     return (
       <div
@@ -35,7 +18,6 @@ class Layout extends React.Component {
         }}
       >
         <Header siteTitle={title} menuLinks={headerLinks}></Header>
-        <header>{header}</header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}
