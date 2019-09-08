@@ -10,23 +10,23 @@ module.exports = {
     },
     menuLinks: [
       {
-        name: 'home',
+        name: 'About',
         link: '/',
       },
       {
-        name: 'research',
+        name: 'Research',
         link: '/research',
       },
       {
-        name: 'cv',
+        name: 'CV',
         link: '/cv',
       },
       {
-        name: 'publications',
+        name: 'Publications',
         link: '/publications',
       },
       {
-        name: 'gallery',
+        name: 'Gallery',
         link: '/gallery',
       },
     ],
