@@ -5,7 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-class BlogIndex extends React.Component {
+class Homepage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -13,14 +13,15 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout title={siteTitle} headerLinks={headerLinks}>
-        <SEO title="Wei Ba" />
+        <SEO title="Neuroscientist in sleep and anaesthesia" />
+        Homepage!
         <Bio />
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default Homepage
 
 export const pageQuery = graphql`
   query {
