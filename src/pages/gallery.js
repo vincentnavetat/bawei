@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Lightbox from '../components/lightbox'
 
 class Gallery extends React.Component {
   render() {
@@ -15,6 +16,8 @@ class Gallery extends React.Component {
         <SEO title="Gallery" />
         <article>
           This is the Gallery page
+
+          <Lightbox images={data.allImageSharp.edges} />
         </article>
       </Layout>
     )
@@ -31,6 +34,15 @@ export const pageQuery = graphql`
         menuLinks {
           name
           link
+        }
+      }
+    }
+    allImageSharp {
+      edges {
+        node {
+          sizes(maxWidth: 1000) {
+            ...GatsbyImageSharpSizes
+          }
         }
       }
     }
