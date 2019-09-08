@@ -26,31 +26,31 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-8b2f30cf0c7511f4b818.js"
+    "url": "webpack-runtime-d6ca3dd7f3ca7b48c828.js"
   },
   {
-    "url": "styles.ce83018ca2b223cd79d4.css"
+    "url": "styles.847bc59ddcd66f61b45a.css"
   },
   {
-    "url": "styles-4522bd4f7088dd33692c.js"
+    "url": "styles-8d9e5d04ab4bd2c7e77e.js"
   },
   {
-    "url": "app-be425b4079842082e0c3.js"
+    "url": "app-90eac949f4f123d99486.js"
   },
   {
-    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-4543f920c31866788350.js"
+    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-21991573696c8e1f272b.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "c38594601df11c55f7fbab2eff5ce7fb"
+    "revision": "9a0b4f70c9c46852d8e8972596fb5c05"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "68184c34750cb7739d13c29f43e3130e"
+    "revision": "e46b99d3af69fb638deb1c93cb2769c6"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "067f6dc2d1fb9e7cc2d7f348d035cfa5"
+    "revision": "f8237de81ee832fc86a9f0ba33f8f637"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
@@ -74,7 +74,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/bawei/app-be425b4079842082e0c3.js`))) {
+  if (!resources || !(await caches.match(`/bawei/app-90eac949f4f123d99486.js`))) {
     return await fetch(event.request)
   }
 
