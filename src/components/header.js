@@ -5,13 +5,11 @@ import PropTypes from 'prop-types'
 const Header = ({ siteTitle, menuLinks }) => (
   <header
     style={{
-      background: "rebeccapurple",
       marginBottom: "1.45rem",
     }}
   >
     <div
       style={{
-        background: "rebeccapurple",
         marginBottom: "1.45rem",
       }}
     >
@@ -29,7 +27,6 @@ const Header = ({ siteTitle, menuLinks }) => (
           <Link
             to="/"
             style={{
-              color: "white",
               textDecoration: "none",
             }}
           >
@@ -47,7 +44,7 @@ const Header = ({ siteTitle, menuLinks }) => (
                     padding: `1rem`,
                   }}
                 >
-                  <Link style={{ color: `white` }} to={link.link}>
+                  <Link to={link.link}>
                     {link.name}
                   </Link>
                 </li>

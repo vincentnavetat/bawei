@@ -1,8 +1,8 @@
 module.exports = {
   pathPrefix: "/bawei",
   siteMetadata: {
-    title: `Ba Wei, PhD`,
-    author: `Ba Wei`,
+    title: `Wei Ba, PhD`,
+    author: `Wei Ba`,
     description: `Neuroscientist in sleep and anaesthesia`,
     siteUrl: `https://vincentnavetat.github.io/bawei`,
     social: {
@@ -80,8 +80,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Ba Wei, PhD`,
-        short_name: `Ba Wei`,
+        name: `Wei Ba, PhD`,
+        short_name: `Wei Ba`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
