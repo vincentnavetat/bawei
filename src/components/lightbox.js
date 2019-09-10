@@ -85,6 +85,7 @@ class Lightbox extends Component {
               Next
             </NextButton>
           </Controls>
+          <LightboxOverlay onClick={this.closeModal}/>
         </LightboxModal>
       </Fragment>
     )
@@ -144,7 +145,6 @@ const LightboxModal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.68);
   overflow: hidden;
   opacity: ${props => (props.visible ? '1' : '0')};
   visibility: ${props => (props.visible ? 'visible' : 'hidden')};
@@ -163,6 +163,16 @@ const ImgContainer = styled.div`
 `
 
 const Controls = styled.div``
+
+const LightboxOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.68);
+  z-index: -1;
+`
 
 Lightbox.propTypes = {
   images: PropTypes.array.isRequired,
