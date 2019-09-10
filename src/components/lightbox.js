@@ -73,45 +73,34 @@ class Lightbox extends Component {
         </Gallery>
 
         <LightboxModal visible={showLightbox} onKeyUp={e => this.handleKeyDown(e)}>
-          <LightboxContent>
+          <ImgContainer visible={showLightbox}>
             <Img sizes={images[selectedImage].node.sizes} />
-            <Controls>
-              <Button onClick={this.closeModal}>Close</Button>
-              <LeftRight>
-                <Button onClick={this.goBack} disabled={selectedImage === 0}>
-                  Previous
-                </Button>
-                <Button onClick={this.goForward} disabled={selectedImage === images.length - 1}>
-                  Next
-                </Button>
-              </LeftRight>
-            </Controls>
-          </LightboxContent>
+          </ImgContainer>
+          <Controls>
+            <CloseButton onClick={this.closeModal}>Close</CloseButton>
+            <PrevButton onClick={this.goBack} disabled={selectedImage === 0}>
+              Previous
+            </PrevButton>
+            <NextButton onClick={this.goForward} disabled={selectedImage === images.length - 1}>
+              Next
+            </NextButton>
+          </Controls>
         </LightboxModal>
       </Fragment>
     )
   }
 }
 
-const StyledImg = styled(Img)`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  height: 100%; // or whatever
-  & > img {
-    object-fit: cover !important; // or whatever
-    object-position: 0% 0% !important; // or whatever
-  }
-`
+const StyledImg = styled(Img)``
 
 const Gallery = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+
   @media (min-width: 700px) {
     grid-template-columns: 1fr 1fr;
   }
+
   @media (min-width: 900px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -130,10 +119,24 @@ const GalleryItem = styled.div`
   position: relative;
 `
 
-const Button = styled.button``
+const PrevButton = styled.button`
+  position: absolute;
+  left: 0;
+`
+
+const NextButton = styled.button`
+  position: absolute;
+  right: 0;
+`
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+`
 
 const LightboxModal = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -141,26 +144,25 @@ const LightboxModal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.68);
+  overflow: hidden;
   opacity: ${props => (props.visible ? '1' : '0')};
   visibility: ${props => (props.visible ? 'visible' : 'hidden')};
+  transition: all .3s;
+  padding: 64px;
 `
-const LightboxContent = styled.div`
-  margin: 15px;
-  max-width: 700px;
+
+const ImgContainer = styled.div`
   width: 100%;
-`
-
-const Controls = styled.div`
   display: flex;
-  justify-content: space-between;
+  height: 100%;
+  flex: 1;
+  flex-direction: column;
+  transform: ${props => (props.visible ? 'scale(1)' : 'scale(.95)')};
+  transition: all .3s;
 `
 
-const LeftRight = styled.div`
-  button:first-child {
-    margin-right: 10px;
-  }
-`
+const Controls = styled.div``
 
 Lightbox.propTypes = {
   images: PropTypes.array.isRequired,
