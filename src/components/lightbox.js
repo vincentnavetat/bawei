@@ -64,9 +64,9 @@ class Lightbox extends Component {
       <Fragment>
         <Gallery>
           {images.map((img, i) => (
-            <GalleryItem key={img.node.sizes.src}>
-              <a href={img.node.sizes.src} alt="Car Image" onClick={e => this.handleClick(e, i)}>
-                <StyledImg sizes={img.node.sizes} />
+            <GalleryItem key={img.node.childImageSharp.sizes.src}>
+              <a href={img.node.childImageSharp.sizes.src} alt="Car Image" onClick={e => this.handleClick(e, i)}>
+                <StyledImg sizes={img.node.childImageSharp.sizes} />
               </a>
             </GalleryItem>
           ))}
@@ -74,7 +74,7 @@ class Lightbox extends Component {
 
         <LightboxModal visible={showLightbox} onKeyUp={e => this.handleKeyDown(e)}>
           <ImgContainer visible={showLightbox}>
-            <Img sizes={images[selectedImage].node.sizes} />
+            <Img sizes={images[selectedImage].node.childImageSharp.sizes} />
           </ImgContainer>
           <Controls>
             <CloseButton onClick={this.closeModal}>Close</CloseButton>

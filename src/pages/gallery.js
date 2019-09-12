@@ -15,9 +15,7 @@ class Gallery extends React.Component {
       <Layout location={this.props.location} title={siteTitle} headerLinks={headerLinks}>
         <SEO title="Gallery" />
         <article>
-          This is the Gallery page
-
-          <Lightbox images={data.allImageSharp.edges} />
+          <Lightbox images={data.allFile.edges} />
         </article>
       </Layout>
     )
@@ -37,11 +35,13 @@ export const pageQuery = graphql`
         }
       }
     }
-    allImageSharp {
+    allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, relativeDirectory: {eq: "photos"}}) {
       edges {
         node {
-          sizes(maxWidth: 1000) {
-            ...GatsbyImageSharpSizes
+          childImageSharp {
+            sizes(maxWidth: 1000) {
+              ...GatsbyImageSharpSizes
+            }
           }
         }
       }
