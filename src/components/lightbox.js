@@ -64,11 +64,9 @@ class Lightbox extends Component {
       <Fragment>
         <Gallery>
           {images.map((img, i) => (
-            <GalleryItem key={img.node.childImageSharp.sizes.src}>
-              <a href={img.node.childImageSharp.sizes.src} alt="Car Image" onClick={e => this.handleClick(e, i)}>
-                <StyledImg sizes={img.node.childImageSharp.sizes} />
-              </a>
-            </GalleryItem>
+            <a href={img.node.childImageSharp.sizes.src} alt="Car Image" onClick={e => this.handleClick(e, i)}>
+              <StyledImg sizes={img.node.childImageSharp.sizes} />
+            </a>
           ))}
         </Gallery>
 
@@ -92,7 +90,9 @@ class Lightbox extends Component {
   }
 }
 
-const StyledImg = styled(Img)``
+const StyledImg = styled(Img)`
+  height: 100%;
+`
 
 const Gallery = styled.div`
   display: grid;
@@ -114,10 +114,6 @@ const Gallery = styled.div`
   .gatsby-image-outer-wrapper {
     height: 100%;
   }
-`
-
-const GalleryItem = styled.div`
-  position: relative;
 `
 
 const PrevButton = styled.button`
