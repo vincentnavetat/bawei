@@ -26,7 +26,7 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-a17a15992d23e8db0272.js"
+    "url": "webpack-runtime-3231617845adeadd673c.js"
   },
   {
     "url": "commons-401bf2b9fcbd2a31fd90.js"
@@ -35,21 +35,17 @@ self.__precacheManifest = [
     "url": "styles.847bc59ddcd66f61b45a.css"
   },
   {
-    "url": "styles-bcf8ba096df5a98d14ba.js"
+    "url": "styles-d2f0dd28e1193bb57d80.js"
   },
   {
-    "url": "app-3e9554cf1da771348c74.js"
+    "url": "app-fef0eed5da11d920fc33.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-c3d2ef758d66179d4599.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "dafdf6b9281698605d22ab7c72467445"
-  },
-  {
-    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "ac29e72aff57a48562fbd59ad13a221f"
+    "revision": "ebb1a01a43ef4f847183d89b7451c335"
   },
   {
     "url": "manifest.webmanifest",
@@ -72,12 +68,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/bawei`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/bawei/app-3e9554cf1da771348c74.js`))) {
+  if (!resources || !(await caches.match(`/app-fef0eed5da11d920fc33.js`))) {
     return await fetch(event.request)
   }
 
@@ -90,7 +86,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/bawei/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
