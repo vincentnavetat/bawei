@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/bawei",
+  pathPrefix: "/",
   siteMetadata: {
     title: `Wei Ba, PhD`,
     author: `Wei Ba`,
