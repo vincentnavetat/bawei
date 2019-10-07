@@ -84,5 +84,20 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Playfair Display`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Roboto`,
+            variants: [`400`, `700`]
+          },
+        ],
+      },
+    }
   ],
 }
