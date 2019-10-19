@@ -97,39 +97,39 @@ const StyledImg = styled(Img)`
 const Gallery = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  grid-gap: 15px;
 
   @media (min-width: 700px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (min-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  @media (min-width: 1100px) {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  grid-gap: 15px;
   .gatsby-image-outer-wrapper {
     height: 100%;
   }
 `
 
+const Controls = styled.div`
+  z-index: 1;
+`
+
 const PrevButton = styled.button`
   position: absolute;
-  left: 0;
+  left: 10px;
 `
 
 const NextButton = styled.button`
   position: absolute;
-  right: 0;
+  right: 10px;
 `
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
 `
 
 const LightboxModal = styled.div`
@@ -146,19 +146,20 @@ const LightboxModal = styled.div`
   visibility: ${props => (props.visible ? 'visible' : 'hidden')};
   transition: all .3s;
   padding: 64px;
+  z-index: 1;
 `
 
 const ImgContainer = styled.div`
   width: 100%;
   display: flex;
+  justify-content: center;
   height: 100%;
   flex: 1;
   flex-direction: column;
   transform: ${props => (props.visible ? 'scale(1)' : 'scale(.95)')};
   transition: all .3s;
+  z-index: 1;
 `
-
-const Controls = styled.div``
 
 const LightboxOverlay = styled.div`
   position: absolute;
@@ -167,7 +168,6 @@ const LightboxOverlay = styled.div`
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.68);
-  z-index: -1;
 `
 
 Lightbox.propTypes = {

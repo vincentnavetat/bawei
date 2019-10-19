@@ -5,55 +5,42 @@ import PropTypes from 'prop-types'
 const Header = ({ siteTitle, menuLinks }) => (
   <header
     style={{
-      marginBottom: "1.45rem",
+      marginBottom: "1rem",
     }}
   >
-    <div
-      style={{
-        marginBottom: "1.45rem",
-      }}
-    >
-      <div
+    <h1 style={{
+      margin: 0
+    }}>
+      <Link
+        to="/"
         style={{
-          margin: "0 auto",
-          maxWidth: 960,
-          padding: "1.45rem 1.0875rem",
-          display: "flex",
-          justifyItems: "space-between",
-          alignItems: "center",
+          textDecoration: "none",
         }}
       >
-        <h1 style={{ margin: 0, flex: 1 }}>
-          <Link
-            to="/"
+        {siteTitle}
+      </Link>
+    </h1>
+    <nav>
+      <ul style={{
+        display: "flex",
+        flex: 1,
+        marginLeft: 0,
+      }}>
+        {menuLinks.map(link => (
+          <li
+            key={link.name}
             style={{
-              textDecoration: "none",
+              listStyleType: `none`,
+              padding: `1rem`,
             }}
           >
-            {siteTitle}
-          </Link>
-        </h1>
-        <div>
-          <nav>
-            <ul style={{ display: "flex", flex: 1 }}>
-              {menuLinks.map(link => (
-                <li
-                  key={link.name}
-                  style={{
-                    listStyleType: `none`,
-                    padding: `1rem`,
-                  }}
-                >
-                  <Link to={link.link}>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
+            <Link to={link.link}>
+              {link.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   </header>
 )
 

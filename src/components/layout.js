@@ -1,7 +1,6 @@
 import React from "react"
 import Header from "./header"
-
-import { rhythm } from "../utils/typography"
+import Bio from "../components/bio"
 
 class Layout extends React.Component {
   render() {
@@ -10,15 +9,26 @@ class Layout extends React.Component {
     return (
       <div
         style={{
+          padding: "15px",
+          maxWidth: "700px",
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
-          // padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          minHeight: `100vh`,
+          display: `flex`,
+          flexDirection: `column`,
+          justifyContent: `space-between`,
         }}
       >
-        <Header siteTitle={title} menuLinks={headerLinks}></Header>
-        <main>{children}</main>
-        <footer>
+        <div>
+          <Header siteTitle={title} menuLinks={headerLinks}></Header>
+          <main>{children}</main>
+        </div>
+        <footer
+          style={{
+
+          }}
+        >
+          <Bio />
           © {new Date().getFullYear()}
         </footer>
       </div>

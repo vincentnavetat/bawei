@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -14,8 +13,11 @@ class Homepage extends React.Component {
     return (
       <Layout title={siteTitle} headerLinks={headerLinks}>
         <SEO title="Neuroscientist in sleep and anaesthesia" />
-        Homepage!
-        <Bio />
+
+        <p>
+          Miss Wei Ba is the most awesome Neuroscientist in the world.
+        </p>
+
       </Layout>
     )
   }
