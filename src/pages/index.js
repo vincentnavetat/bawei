@@ -13,11 +13,6 @@ class Homepage extends React.Component {
     return (
       <Layout title={siteTitle} headerLinks={headerLinks}>
         <SEO title="Neuroscientist in sleep and anaesthesia" />
-
-        <p>
-          Miss Wei Ba is the most awesome Neuroscientist in the world.
-        </p>
-
       </Layout>
     )
   }
