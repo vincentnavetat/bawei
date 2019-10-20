@@ -4,7 +4,7 @@ module.exports = {
     title: `Wei Ba, PhD`,
     author: `Wei Ba`,
     description: `Neuroscientist in sleep and anaesthesia`,
-    siteUrl: `https://vincentnavetat.github.io/bawei`,
+    siteUrl: `https://wei-ba.info/`,
     social: {
       twitter: `vivien_ba`,
     },
